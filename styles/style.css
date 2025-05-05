@@ -19,7 +19,7 @@ body {
 }
 /* Kitchen calculator background */
 body.kitchen-calculator {
-    background-image: url('../kitchenbackground.webp');
+    background-image: url('/kitchenbackground.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@ body.kitchen-calculator {
 
 /* Bathroom calculator background */
 body.bathroom-calculator {
-    background-image: url('../bathroombackground.jpeg');
+    background-image: url('/bathroombackground.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,7 +39,7 @@ body.bathroom-calculator {
 
 /* Home additions calculator background */
 body.additions-calculator {
-    background-image: url('../additionbackground.jpeg');
+    background-image: url('/additionbackground.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
