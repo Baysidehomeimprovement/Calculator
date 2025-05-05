@@ -300,3 +300,14 @@ body.additions-calculator .progress-bar {
 body.additions-calculator .policy-links a {
     color: #FCD798;
 }
+
+/* Then add your media query at the end of the file */
+@media only screen and (max-width: 767px) {
+    body.kitchen-calculator,
+    body.bathroom-calculator,
+    body.additions-calculator {
+        background-attachment: scroll; /* Change from fixed to scroll */
+        background-size: cover;
+        background-position: center top;
+    }
+}
