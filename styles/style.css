@@ -14,65 +14,47 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-
-    
+    position: relative;
 }
-/* Kitchen calculator background */
-body.kitchen-calculator {
-    background-image: url('/kitchenbackground.webp');
+
+/* Background image container */
+.background-image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
+}
+
+/* Kitchen calculator background */
+body.kitchen-calculator .background-image-container {
+    background-image: url('/kitchenbackground.webp');
 }
 
 /* Bathroom calculator background */
-body.bathroom-calculator {
+body.bathroom-calculator .background-image-container {
     background-image: url('/bathroombackground.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
 }
 
 /* Home additions calculator background */
-body.additions-calculator {
+body.additions-calculator .background-image-container {
     background-image: url('/additionbackground.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
 }
 
 /* Overlay to ensure content remains readable */
-body.kitchen-calculator:before,
-body.bathroom-calculator:before,
-body.additions-calculator:before {
+.background-overlay {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.499);
     z-index: -1;
-}
-
-/* Kitchen overlay */
-body.kitchen-calculator:before {
-    background-color: rgba(0, 0, 0, 0.499); /* Light orange tint */
-}
-
-/* Bathroom overlay */
-body.bathroom-calculator:before {
-    background-color: rgba(0, 0, 0, 0.499); /* Light blue tint */
-}
-
-/* Home additions overlay */
-body.additions-calculator:before {
-    background-color: rgba(0, 0, 0, 0.499); /* Light green tint */
 }
 
 /* Enhance calculator card background for better readability */
@@ -86,6 +68,8 @@ body.additions-calculator:before {
     margin-bottom: 30px;
     max-width: 800px;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .company-name {
@@ -99,7 +83,6 @@ body.additions-calculator:before {
     color: #ffffff;
     font-size: 1.7rem;
     font-weight: bold;
-
 }
 
 .calculator-card {
@@ -110,6 +93,8 @@ body.additions-calculator:before {
     max-width: 600px;
     overflow: hidden;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .calculator-content {
@@ -210,6 +195,8 @@ body.additions-calculator:before {
     border-radius: 4px;
     margin-bottom: 20px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .progress-bar {
@@ -301,13 +288,10 @@ body.additions-calculator .policy-links a {
     color: #FCD798;
 }
 
-/* Then add your media query at the end of the file */
+/* Mobile-specific adjustments */
 @media only screen and (max-width: 767px) {
-    body.kitchen-calculator,
-    body.bathroom-calculator,
-    body.additions-calculator {
-        background-attachment: scroll; /* Change from fixed to scroll */
-        background-size: cover;
+    .background-image-container {
+        background-attachment: scroll;
         background-position: center top;
     }
 }
