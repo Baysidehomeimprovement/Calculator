@@ -182,6 +182,11 @@
             .page-title {
                 font-size: 1.5rem;
             }
+            
+            .container {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
         }
     </style>
 </head>
@@ -227,18 +232,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Optional: Add animation or interaction effects
-        document.querySelectorAll('.calculator-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.querySelector('.calculator-button').style.transform = 'scale(1.1)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.querySelector('.calculator-button').style.transform = 'scale(1)';
-            });
-        });
-    </script>
 </body>
 </html>
