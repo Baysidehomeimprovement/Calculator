@@ -476,6 +476,9 @@
             
             <!-- Subject line of the email -->
             <input type="hidden" name="_subject" value="Kitchen Calculator Lead">
+
+            <input type="hidden" name="_next" value="https://calculator.baysidehomeimprovement.com/kitchen-estimate.html">
+
             
             <div class="form-group">
                 <label for="fullname">Full Name</label>
@@ -796,7 +799,7 @@
        
 // Form Submission Handler
 document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission/redirection
+    event.preventDefault(); // Still prevent default submission
     
     // Form data will be handled by FormSubmit.co in the background
     let formData = new FormData(this);
@@ -805,12 +808,15 @@ document.querySelector('form').addEventListener('submit', function(event) {
     fetch(this.action, {
         method: 'POST',
         body: formData
+    }).then(response => {
+        // After the form is successfully submitted, redirect to the estimate page
+        window.location.href = "kitchen-estimate.html"; // Update with your actual filename
+    }).catch(error => {
+        console.error('Error submitting form:', error);
+        // Fall back to showing the results page
+        document.getElementById('step-17').classList.add('hidden');
+        document.getElementById('results-page').classList.remove('hidden');
     });
-    
-    // Show the results page immediately
-    document.getElementById('step-17').classList.add('hidden');
-    document.getElementById('results-page').classList.remove('hidden');
-
 });
     </script>
 </body>
